@@ -25,36 +25,14 @@ Este documento detalha personas, histórias de usuário, requisitos e restriçõ
 
 ```mermaid
 flowchart LR
-    %% --------- ESTILO CORPORATIVO ----------
-    classDef step fill:#ffffff,stroke:#1f2937,stroke-width:1.2px,color:#1f2937,font-size:14px,font-weight:bold;
-    classDef decision fill:#f3f4f6,stroke:#1f2937,stroke-width:1.5px,color:#1f2937,font-size:14px,font-weight:bold;
-    classDef error fill:#fdecea,stroke:#991b1b,stroke-width:1.2px,color:#991b1b,font-weight:bold;
-
-    %% --------- NÓS (COM ÍCONES DISCRETOS) ----------
-    A["💰 Depósito ≥ R$20"]
-    B["📘 Saldo atualizado"]
-    C["🎯 Selecionar aposta"]
-    D{"⚖️ Saldo suficiente?"}
-    M["⚠️ Erro: saldo insuficiente"]
-    E["🎰 Girar"]
-    F["📊 Calcular ganhos"]
-    G["💹 Atualizar saldo"]
-
-    %% --------- APLICAÇÃO DE CLASSES ----------
-    class A,B,C,E,F,G step;
-    class D decision;
-    class M error;
-
-    %% --------- FLUXO ----------
-    A --> B
-    B --> C
-    C --> D
-    D -- "Não" --> M
-    D -- "Sim" --> E
-    E --> F
-    F --> G
+    A[Inserir depósito ≥ R$20] --> B[Saldo atualizado]
+    B --> C[Selecionar aposta]
+    C --> D{Saldo suficiente?}
+    D -- Não --> M[Mensagem de erro]
+    D -- Sim --> E[Girar]
+    E --> F[Calcular ganhos]
+    F --> G[Atualizar saldo]
     G --> C
-
 ```
 
 
