@@ -41,15 +41,27 @@ Foram usados benchmarks simples: inspeção de apps de slots populares, entrevis
 
 ## Mapa de stakeholders
 
-```mermaid
-flowchart TB
-    U[Jogadores ocasionais] -->|Feedback de UX| Equipe
-    D[Devs/estudantes] -->|Contribuicoes e ajustes| Equipe
-    M[Mentores/avaliadores] -->|Criterios de validacao| Equipe
-    Equipe --> App[SlotsEngine (frontend)]
-    App --> U
-    App --> D
-    App --> M
+```flowchart TB
+    %% NÓS PRINCIPAIS
+    U[Jogadores ocasionais]
+    D[Desenvolvedores / Estudantes]
+    M[Mentores / Avaliadores]
+    E[Equipe de Desenvolvimento]
+    A[SlotsEngine (Frontend)]
+
+    %% SETAS ENTRANDO NA EQUIPE
+    U -->|Feedback de UX| E
+    D -->|Contribuições técnicas| E
+    M -->|Critérios de validação| E
+
+    %% RELAÇÃO EQUIPE → APLICAÇÃO
+    E -->|Implementação e manutenção| A
+
+    %% APLICAÇÃO → STAKEHOLDERS
+    A -->|Experiência de jogo| U
+    A -->|Código e lógica para estudo| D
+    A -->|Fluxo documentado| M
+
 ```
 
 
