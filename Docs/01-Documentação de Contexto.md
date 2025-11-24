@@ -41,7 +41,8 @@ Foram usados benchmarks simples: inspeção de apps de slots populares, entrevis
 
 ## Mapa de stakeholders
 
-```flowchart LR
+```mermaid
+flowchart LR
     %% ESTILO CORPORATIVO
     classDef node fill:#ffffff,stroke:#1f2937,stroke-width:1.2px,color:#1f2937,font-size:14px,font-weight:bold;
     classDef center fill:#f3f4f6,stroke:#1f2937,stroke-width:1.5px,color:#1f2937,font-size:14px,font-weight:bold;
