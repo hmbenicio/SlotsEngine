@@ -22,16 +22,39 @@ Este documento detalha personas, histórias de usuário, requisitos e restriçõ
 ## Modelagem de Processo
 
 ### Fluxo principal (depósito → aposta → giro)
+
 ```mermaid
 flowchart LR
-    A[Inserir deposito >= R$20] --> B[Saldo atualizado]
-    B --> C[Selecionar aposta]
-    C --> D{Saldo suficiente?}
-    D -- Nao --> M[Mensagem de erro]
-    D -- Sim --> E[Girar roleta]
-    E --> F[Calcular ganhos (linhas/diagonais)]
-    F --> G[Atualizar saldo e mensagem]
+    %% --------- ESTILO CORPORATIVO ----------
+    classDef step fill:#ffffff,stroke:#1f2937,stroke-width:1.2px,color:#1f2937,font-size:14px,font-weight:bold;
+    classDef decision fill:#f3f4f6,stroke:#1f2937,stroke-width:1.5px,color:#1f2937,font-size:14px,font-weight:bold;
+    classDef error fill:#fdecea,stroke:#991b1b,stroke-width:1.2px,color:#991b1b,font-weight:bold;
+
+    %% --------- NÓS (COM ÍCONES DISCRETOS) ----------
+    A["💰 Depósito ≥ R$20"]
+    B["📘 Saldo atualizado"]
+    C["🎯 Selecionar aposta"]
+    D{"⚖️ Saldo suficiente?"}
+    M["⚠️ Erro: saldo insuficiente"]
+    E["🎰 Girar"]
+    F["📊 Calcular ganhos"]
+    G["💹 Atualizar saldo"]
+
+    %% --------- APLICAÇÃO DE CLASSES ----------
+    class A,B,C,E,F,G step;
+    class D decision;
+    class M error;
+
+    %% --------- FLUXO ----------
+    A --> B
+    B --> C
+    C --> D
+    D -- "Não" --> M
+    D -- "Sim" --> E
+    E --> F
+    F --> G
     G --> C
+
 ```
 
 
