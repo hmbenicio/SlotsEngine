@@ -55,4 +55,4 @@ Requer Node.js 18+ e app Expo Go em dispositivo ou emulador configurado.
 - `Docs/13-Referencias.md`
 
 ## Contatos e equipe
-Projeto desenvolvido para fins academicos e de portfolio. Ajuste a secao de equipe conforme o time atuante.
+Projeto desenvolvido para fins de portfolio. Ajuste a secao de equipe conforme o time atuante.
